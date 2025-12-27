@@ -15,5 +15,18 @@ Brain::Brain(const Brain &other){
 }
 
 Brain& Brain::operator=(const Brain &other){
-    
+    int i = 0;
+    if (this != &other){
+        while(i < 100)
+        {
+            ideas[i] = other.ideas[i];
+            i++;
+        }
+    }
+    std::cout<<" Brain copy assignment operator called "<<std::endl;
+    return *this;
+}
+
+Brain::~Brain(){
+    std::cout<<" Brain destructor called "<<std::endl;
 }

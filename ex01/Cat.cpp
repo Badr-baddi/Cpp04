@@ -1,21 +1,28 @@
 #include "includes/Cat.hpp"
+#include "includes/Brain.hpp"
 
 Cat::Cat() : Animal(){
+    brain = new Brain();
     std::cout<<" Cat default constructor called "<<std::endl;
 }
 
 Cat::Cat(const Cat &other) : Animal(other){
+    brain = new Brain(*other.brain);
     std::cout<<" Cat copy constructor called "<<std::endl;
 }
 
 Cat& Cat::operator=(const Cat &other){
-    if (this != &other)
+    if (this != &other){
         Animal::operator = (other);
-    std::cout<<" Cat copy assignment constructor called "<<std::endl;
+        delete brain;
+        brain = new Brain(*other.brain);
+    }
+    std::cout<<" Cat copy assignment operator called "<<std::endl;
     return *this;
 }
 
 Cat::~Cat(){
+    delete brain;
     std::cout<<" Cat destructor called"<<std::endl;
 }
 
