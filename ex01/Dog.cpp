@@ -2,6 +2,7 @@
 #include "includes/Brain.hpp"
 
 Dog::Dog() : Animal(){
+    type = "Dog";
     brain = new Brain();
     std::cout << " Dog default constructor called " << std::endl;
 }

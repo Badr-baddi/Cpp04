@@ -1,6 +1,7 @@
 #include "includes/Cat.hpp"
 
 Cat::Cat() : Animal(){
+    type = "CAT";
     std::cout<<" Cat default constructor called "<<std::endl;
 }
 

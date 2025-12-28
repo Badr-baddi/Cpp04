@@ -2,6 +2,7 @@
 #include "includes/Brain.hpp"
 
 Cat::Cat() : Animal(){
+    type = "Cat";
     brain = new Brain();
     std::cout<<" Cat default constructor called "<<std::endl;
 }
